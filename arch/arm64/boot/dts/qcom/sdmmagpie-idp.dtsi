@@ -357,6 +357,8 @@
 &pm6150_qg {
 	qcom,battery-data = <&mtp_batterydata>;
 	qcom,qg-iterm-ma = <100>;
+	qcom,cl-feedback-on;
+
 	qcom,hold-soc-while-full;
 	qcom,linearize-soc;
 	qcom,cl-feedback-on;
