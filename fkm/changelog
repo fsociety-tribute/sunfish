@@ -1,0 +1,20 @@
+fsociety tribute
+stable#2.47 - 19/01/2022
+
+- The kernel is upstreamed to 4.14.261 from linux-stable
+- January 2022 security patches merged-in with some fixes from A12L beta 2
+- Merge the latest security and code fixes from CAF
+- Update AnyKernel3 to its latest release
+- Memory management optimizations and scheduler improvements
+- mmap/mremap upstream code backports (huge thanks to Kaz205 for providing them) for better performance
+- Merge code fixes to Android's binder driver
+- The Wi-Fi driver has more debugging bloat removed, and uses now less CPU when the hotspot feature is activated
+- Replace srandom with LRNG as the latter is a preferable choice in terms of updates and overall performance (thanks to atndko, celtare21 and arter97)
+- Disable MSM_JTAGV8 "to avoid potential power, performance and memory penalty" (source: qcom's Kconfig file - thanks to Freak07)
+- fs: f2fs: Make iostat_enable read-only to reduce file system overhead (thanks to celtare21)
+- Minimize alarmtimer wakeup time to reduce idle power consumption (thanks to xNombre)
+- fsociety tribute tuning script's changes:
+Set zRAM's compression algorithm back to lz4
+Calculate zRAM's disksize using half of the total RAM's value
+Reduce the overall execution delay's sleep time (thanks to engstk) to fix the post-boot's potential 3rd parties changes made to zRAM 
+- Revert "msm: camera: Kill the vsync notification driver" to avoid any suspicious/speculated issues with apps that use the camera's augmented reality features
