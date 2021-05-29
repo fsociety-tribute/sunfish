@@ -396,7 +396,7 @@ int msm_vidc_g_ext_ctrl(void *instance, struct v4l2_ext_controls *control)
 	for (i = 0; i < control->count; i++) {
 		switch (ext_control[i].id) {
 		default:
-			dprintk(VIDC_ERR,
+			dprintk(VIDC_DBG,
 				"This control %x is not supported yet\n",
 					ext_control[i].id);
 			break;
