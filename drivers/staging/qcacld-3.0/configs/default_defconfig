@@ -288,7 +288,7 @@ CONFIG_QCA_WIFI_QCA8074 := y
 CONFIG_QCA_WIFI_QCA8074_VP := y
 CONFIG_DP_INTR_POLL_BASED := y
 CONFIG_TX_PER_PDEV_DESC_POOL := y
-CONFIG_DP_TRACE := y
+CONFIG_DP_TRACE := n
 CONFIG_FEATURE_TSO := y
 CONFIG_DP_LFR := y
 CONFIG_HTT_PADDR64 := y
@@ -350,8 +350,8 @@ endif
 # Compile all log levels by default
 CONFIG_WLAN_LOG_FATAL := y
 CONFIG_WLAN_LOG_ERROR := y
-CONFIG_WLAN_LOG_WARN := y
-CONFIG_WLAN_LOG_INFO := y
+CONFIG_WLAN_LOG_WARN := n
+CONFIG_WLAN_LOG_INFO := n
 
 #Enable OL debug and wmi unified functions
 CONFIG_ATH_PERF_PWR_OFFLOAD := y
@@ -576,7 +576,7 @@ endif
 
 # enable unit-test suspend for napier builds
 ifeq ($(CONFIG_LITHIUM), y)
-	CONFIG_FEATURE_UNIT_TEST_SUSPEND := y
+	CONFIG_FEATURE_UNIT_TEST_SUSPEND := n
 endif
 
 #Flag to enable/disable WLAN D0-WOW
@@ -608,7 +608,6 @@ CONFIG_DESC_DUP_DETECT_DEBUG := y
 CONFIG_DEBUG_RX_RING_BUFFER := y
 endif
 
-CONFIG_DP_TRACE := y
 #Enable Beacon Reception Stats
 CONFIG_FEATURE_BECN_STATS := y
 
