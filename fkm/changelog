@@ -1,20 +1,23 @@
 fsociety tribute
-stable#2.47 - 19/01/2022
+stable#2.54 - 11/02/2022
 
-- The kernel is upstreamed to 4.14.261 from linux-stable
-- January 2022 security patches merged-in with some fixes from A12L beta 2
+- Clang 12 is used again for compiling the kernel until further notice/change
+- Revert "defconfig: enable ld deadcode elimination" (by engstk)
+- The kernel is upstreamed to 4.14.264 from linux-stable
+- February 2022 security patches merged-in with fixes from A12L beta 3
 - Merge the latest security and code fixes from CAF
 - Update AnyKernel3 to its latest release
-- Memory management optimizations and scheduler improvements
-- mmap/mremap upstream code backports (huge thanks to Kaz205 for providing them) for better performance
-- Merge code fixes to Android's binder driver
-- The Wi-Fi driver has more debugging bloat removed, and uses now less CPU when the hotspot feature is activated
-- Replace srandom with LRNG as the latter is a preferable choice in terms of updates and overall performance (thanks to atndko, celtare21 and arter97)
-- Disable MSM_JTAGV8 "to avoid potential power, performance and memory penalty" (source: qcom's Kconfig file - thanks to Freak07)
-- fs: f2fs: Make iostat_enable read-only to reduce file system overhead (thanks to celtare21)
-- Minimize alarmtimer wakeup time to reduce idle power consumption (thanks to xNombre)
+- Changes from Proton kernel (by kdrag0n):
+arm64: dts: sdmmagpie: Power off DSI PHY during idle PC 
+arm64: dts: sunfish: Tweak QG SOC to be more linear/monotonic (Proton kernel)
+That fixes the stock kernel's unlinear battery level drop, especially between 100% and 90%. The device will need a few charge-discharge cycles to take it into consideration.
+Save 72MB of RAM by removing the unused memory dump regions
+- Fix the suspend kernel panic reported by krysztof on Telegram
+- Fix memory leaks present in the stock kernel's camera driver (by sultanxda/kerneltoast)
+- Power optimization changes:
+qos: Don't allow userspace to impose restrictions on CPU idle levels (by sultanxda/kerneltoast)
+kernel: time: reduce ntp wakeups 
+Revert the mmap/mremap upstream code backports included in the previous update to prefer a more balanced usage
+Revert some zRAM lz4 compression algorithm's code updates that had allegedly an impact on battery life
 - fsociety tribute tuning script's changes:
-Set zRAM's compression algorithm back to lz4
-Calculate zRAM's disksize using half of the total RAM's value
-Reduce the overall execution delay's sleep time (thanks to engstk) to fix the post-boot's potential 3rd parties changes made to zRAM 
-- Revert "msm: camera: Kill the vsync notification driver" to avoid any suspicious/speculated issues with apps that use the camera's augmented reality features
+Remove the tuning script's governor tunables. We use the kernel's stock values now because the governor has been updated a while ago.

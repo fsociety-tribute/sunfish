@@ -1,13 +1,13 @@
 {
   "kernel": {
     "name": "fsociety tribute kernel",
-    "version": "stable #2.47",
-    "link": "https://sourceforge.net/projects/fsociety-tribute/files/pixel4a/a12/fsociety-tribute-stable%232.47.zip/download",
+    "version": "stable #2.54",
+    "link": "https://sourceforge.net/projects/fsociety-tribute/files/pixel4a/a12/fsociety-tribute-stable%232.54.zip/download",
     "changelog_url": "https://github.com/fsociety-tribute/pixel4a/raw/a12/fkm/changelog",
-    "date": "2022-01-19",
-    "sha1": "2333ce918c6aa3a4002a955822a6c961277f9ffa"
+    "date": "2022-02-11",
+    "sha1": "446258d9975cdcb22ec7facf5c60cc8f7dd91c0a"
   },
   "support": {
-    "link": "https://t.me/fsociety_tribute_p4a"
+    "link": "https://t.me/fsociety_tribute_sunfish"
   }
 }
