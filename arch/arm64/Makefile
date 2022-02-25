@@ -76,6 +76,9 @@ endif
 ifeq ($(CONFIG_ARCH_SM6150), y)
 ifeq ($(cc-name),clang)
 KBUILD_CFLAGS	+= -mcpu=cortex-a55 -mtune=cortex-a55
+ifeq ($(ld-name),lld)
+KBUILD_LDFLAGS  += -mllvm -mcpu=cortex-a55 -mtune=cortex-a55
+endif
 else
 KBUILD_CFLAGS	+= -mcpu=cortex-a76.cortex-a55 -mtune=cortex-a75.cortex-a55
 endif
