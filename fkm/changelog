@@ -1,23 +1,15 @@
 fsociety tribute
-stable#2.54 - 11/02/2022
+stable#2.66 - 13/03/2022
 
-- Clang 12 is used again for compiling the kernel until further notice/change
-- Revert "defconfig: enable ld deadcode elimination" (by engstk)
-- The kernel is upstreamed to 4.14.264 from linux-stable
-- February 2022 security patches merged-in with fixes from A12L beta 3
-- Merge the latest security and code fixes from CAF
+- Android 12L - March 2022 security patch ready (still works on A12 too)
+- The kernel is upstreamed to 4.14.265 from linux-stable
+- Merge the fix for the dirty pipe exploit (https://dirtypipe.cm4all.com/)
 - Update AnyKernel3 to its latest release
-- Changes from Proton kernel (by kdrag0n):
-arm64: dts: sdmmagpie: Power off DSI PHY during idle PC 
-arm64: dts: sunfish: Tweak QG SOC to be more linear/monotonic (Proton kernel)
-That fixes the stock kernel's unlinear battery level drop, especially between 100% and 90%. The device will need a few charge-discharge cycles to take it into consideration.
-Save 72MB of RAM by removing the unused memory dump regions
-- Fix the suspend kernel panic reported by krysztof on Telegram
-- Fix memory leaks present in the stock kernel's camera driver (by sultanxda/kerneltoast)
-- Power optimization changes:
-qos: Don't allow userspace to impose restrictions on CPU idle levels (by sultanxda/kerneltoast)
-kernel: time: reduce ntp wakeups 
-Revert the mmap/mremap upstream code backports included in the previous update to prefer a more balanced usage
-Revert some zRAM lz4 compression algorithm's code updates that had allegedly an impact on battery life
-- fsociety tribute tuning script's changes:
-Remove the tuning script's governor tunables. We use the kernel's stock values now because the governor has been updated a while ago.
+- Update the compiler to Google's latest Clang 14.0.2
+- Reduce the GPU idle timeout from 64ms to 58ms (stock is 80ms)
+- Update the CPU calculated capacities for better power efficiency
+- Haptic Feedback level Control and Fingerprint Haptic Feedback Control features are dropped to avoid any unfair competition with blu_spark. If you need them, feel free to use blu_spark instead!
+- Reset zRAM's disksize to stock's default
+- Swap 1 page at a time instead of the default's 8, so that it may help in case "the device is under extreme memory pressure"
+(source: https://source.android.com/devices/tech/perf/low-ram)
+- Misc. under-the-hood changes
