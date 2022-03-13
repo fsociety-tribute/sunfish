@@ -1,0 +1,14 @@
+fsociety tribute
+stable#2.62 - 13/03/2022
+
+- Merge the fix for the dirty pipe exploit (https://dirtypipe.cm4all.com/)
+- Merge several core changes from the previous A12's fsociety tribute update
+- Update AnyKernel3 to its latest release
+- Update the compiler to Google's latest Clang 14.0.2
+- Reduce the GPU idle timeout from 64ms to 58ms (stock is 80ms)
+- Update the CPU calculated capacities for better power efficiency
+- Haptic Feedback level Control and Fingerprint Haptic Feedback Control features are dropped to avoid any unfair competition with blu_spark. If you need them, feel free to use blu_spark instead!
+- Reset zRAM's disksize to stock's default
+- Swap 1 page at a time instead of the default's 8, so that it may help in case "the device is under extreme memory pressure"
+(source: https://source.android.com/devices/tech/perf/low-ram)
+- Misc. under-the-hood changes

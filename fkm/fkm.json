@@ -1,0 +1,13 @@
+{
+  "kernel": {
+    "name": "fsociety tribute kernel",
+    "version": "stable #2.62",
+    "link": "https://sourceforge.net/projects/fsociety-tribute/files/pixel4a/a11/fsociety-tribute-stable%232.62.zip/download",
+    "changelog_url": "https://github.com/fsociety-tribute/sunfish/raw/a11/fkm/changelog",
+    "date": "2022-03-13",
+    "sha1": "0de51375dd4818d39e4642fedb96667c28b2fbc4"
+  },
+  "support": {
+    "link": "https://t.me/fsociety_tribute_sunfish"
+  }
+}
