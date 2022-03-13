@@ -5978,6 +5978,6 @@ CONFIG_SBITMAP=y
 #
 # fsociety-tribute additions w/ previous blu_spark changes
 #
-CONFIG_LOCALVERSION="-fsociety tribute"
+CONFIG_LOCALVERSION="-fsociety tribute stable#2.54"
 CONFIG_BOEFFLA_WL_BLOCKER=y
 CONFIG_KLAPSE=y
